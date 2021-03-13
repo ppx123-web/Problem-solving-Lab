@@ -27,3 +27,6 @@ add_custom_command(TARGET GraphLibrary POST_BUILD
 # Your custom tests below
 add_executable(Test01 tests/01-hello-world.cpp)
 target_link_libraries(Test01 GraphLibrary)
+
+add_executable(my_test_1 tests/my_test-1.cpp)
+target_link_libraries(my_test_1 GraphLibrary)

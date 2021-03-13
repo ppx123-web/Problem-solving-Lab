@@ -3,13 +3,13 @@
 
 #include<DataStructures/Edge.h>
 
-class WeightEdge : public Edge {
+class WeightedEdge : public Edge {
 private:
     int weight;
 public:
-    WeightEdge(int v1, int v2, int w);
+    WeightedEdge(int source, int destination, int w);
 
-    ~WeightEdge();
+    ~WeightedEdge();
 
     int GetSource() const;
 

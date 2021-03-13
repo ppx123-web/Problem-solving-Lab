@@ -1,12 +1,16 @@
 #ifndef WEIGHTGRAPH_H
 #define WEIGHTGRAPH_H
 
-#include<DataStructures/WeightEdge.h>
+#include<DataStructures/WeightedEdge.h>
 #include<DataStructures/Graph.h>
+#include <map>
+#include <utility>
 
-class WeightGraph : public Graph {
+
+
+class WeightedGraph : public Graph {
 private:
-
+    std::map<std::pair<int,int>,int> edge_weight;
 public:
     WeightedGraph();
 
