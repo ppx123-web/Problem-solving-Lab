@@ -27,6 +27,9 @@ public:
 
     ~Graph();
 
+
+    void clear();
+
 public:
     bool AddVertex(int vertex);
 

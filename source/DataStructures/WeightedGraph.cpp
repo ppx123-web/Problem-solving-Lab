@@ -6,10 +6,16 @@ WeightedGraph::WeightedGraph() : Graph() {
     edge_weight.clear();
 }
 
-WeightedGraph::~WeightedGraph() = default;
+WeightedGraph::~WeightedGraph() {
+    Graph::clear();
+    edge_weight.clear();
+    vertex_in.clear();
+    vertex_out.clear();
+}
 
 bool WeightedGraph::AddVertex(int vertex) {
-    return Graph::AddVertex(vertex);
+    bool ans =  Graph::AddVertex(vertex);
+    return ans;
 }
 
 bool WeightedGraph::RemoveVertex(int vertex) {
@@ -18,14 +24,36 @@ bool WeightedGraph::RemoveVertex(int vertex) {
 
 bool WeightedGraph::AddEdge(int vertex1, int vertex2, int weight) {
     bool ans = Graph::AddEdge(vertex1,vertex2);
-    if(ans) edge_weight[{vertex1,vertex2}] = weight;
-    return ans;
-}
+    if(ans) {
+        edge_weight[{vertex1,vertex2}] = weight;
+        WeightedEdge e(vertex1,vertex2,weight);
+        if(vertex_in.find(vertex2) != vertex_in.end()) {
+            vertex_in[vertex2].push_back(e);
+        } else {
+            std::vector<WeightedEdge> temp;
+            temp.push_back(e);
+            vertex_in[vertex2] = temp;
+        }
 
-//添加了权重参数；如果添加某条边时图中已经存在了相同起点和终点的边（无论权重是多少），则什么都不做并返回false
+        if(vertex_out.find(vertex1) != vertex_in.end()) {
+            vertex_in[vertex1].push_back(e);
+        } else {
+            std::vector<WeightedEdge> temp;
+            temp.push_back(e);
+            vertex_out[vertex1] = temp;
+        }
+        return true;
+    } else {
+        return false;
+    }
+}//添加了权重参数；如果添加某条边时图中已经存在了相同起点和终点的边（无论权重是多少），则什么都不做并返回false
+
+
 bool WeightedGraph::RemoveEdge(int vertex1, int vertex2) {
     if(edge_weight.find({vertex1,vertex2}) == edge_weight.end()) return false;
     else {
+
+
         Graph::RemoveEdge(vertex1,vertex2);
         edge_weight.erase({vertex1,vertex2});
         return true;

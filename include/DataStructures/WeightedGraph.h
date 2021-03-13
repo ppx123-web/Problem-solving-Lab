@@ -11,6 +11,8 @@
 class WeightedGraph : public Graph {
 private:
     std::map<std::pair<int,int>,int> edge_weight;
+    std::map<int,std::vector<WeightedEdge>> vertex_in;
+    std::map<int,std::vector<WeightedEdge>> vertex_out;
 public:
     WeightedGraph();
 
