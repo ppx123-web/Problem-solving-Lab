@@ -19,16 +19,21 @@ private:
     std::vector<Edge>edges_in[MAX_VERTEX];
     std::vector<Edge>edges_out[MAX_VERTEX];
     std::vector<int>vertexes[MAX_VERTEX];
-    std::unordered_map<int,int>vertex_map;
+
     std::vector<int>vertex_set;//点的集合
 
 public:
+
+    std::unordered_map<int,int>vertex_map;
+
     Graph();
 
     ~Graph();
 
 
     void clear();
+
+
 
 public:
     bool AddVertex(int vertex);

@@ -6,11 +6,13 @@
 #include <map>
 #include <utility>
 
+using namespace std;
 
 
 class WeightedGraph : public Graph {
 private:
-    std::map<std::pair<int,int>,int> edge_weight;
+    //std::map<std::pair<int,int>,int> edge_weight;
+    unordered_map<int, int> edge_weight[MAX_VERTEX];
 public:
     WeightedGraph();
 
