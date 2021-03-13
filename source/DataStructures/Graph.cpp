@@ -169,6 +169,9 @@ int Graph::GetDegree(int vertex) const {
     if (vertex_map.find(vertex) == vertex_map.end()) {
         return 0;
     } else {
+        if(edge_out.find(vertex) == edge_out.end()) {
+            return 0;
+        }
         return edge_out.find(vertex)->second.size();
     }
 }
