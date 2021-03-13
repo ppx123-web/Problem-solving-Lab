@@ -5,10 +5,8 @@ WeightedEdge::WeightedEdge(int source, int destination, int w) : Edge(source, de
     weight = w;
 }
 
-WeightedEdge::~WeightedEdge() {
-    //Edge::~Edge();
-    weight = 0;
-}
+WeightedEdge::~WeightedEdge() = default;
+
 
 int WeightedEdge::GetSource() const {
     return Edge::GetSource();
