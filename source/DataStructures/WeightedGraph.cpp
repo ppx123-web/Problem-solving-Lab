@@ -39,7 +39,7 @@ bool WeightedGraph::AddEdge(int vertex1, int vertex2, int weight) {
 
 
 bool WeightedGraph::RemoveEdge(int vertex1, int vertex2) {
-    //if(edge_weight->find(vertex1) == edge_weight->end()) return false;
+    if(vertex_map.find(vertex1)== vertex_map.end()||vertex_map.find(vertex2)== vertex_map.end()) return false;
     if(edge_weight[vertex1].find(vertex2) == edge_weight[vertex1].end()) return false;
     else {
         bool ans = Graph::RemoveEdge(vertex1,vertex2);
