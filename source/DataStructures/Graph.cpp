@@ -58,6 +58,8 @@ void Graph::clear() {
     vertex_set.clear();
     vertex_set.resize(0);}
 
+
+
 bool Graph::AddVertex(int vertex) {
     if(vertex_map.find(vertex) == vertex_map.end()) {
         vertex_map[vertex] = ++vertex_cnt;
@@ -118,6 +120,9 @@ bool Graph::RemoveEdge(int vertex1, int vertex2) {
     }
 
 }
+
+
+
 
 int Graph::CountVertices() const {
     return vertex_set.size();

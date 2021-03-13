@@ -9,8 +9,6 @@ WeightedGraph::WeightedGraph() : Graph() {
 WeightedGraph::~WeightedGraph() {
     Graph::clear();
     edge_weight.clear();
-    vertex_in.clear();
-    vertex_out.clear();
 }
 
 bool WeightedGraph::AddVertex(int vertex) {
@@ -25,22 +23,6 @@ bool WeightedGraph::AddEdge(int vertex1, int vertex2, int weight) {
     bool ans = Graph::AddEdge(vertex1,vertex2);
     if(ans) {
         edge_weight[{vertex1,vertex2}] = weight;
-        WeightedEdge e(vertex1,vertex2,weight);
-        if(vertex_in.find(vertex2) != vertex_in.end()) {
-            vertex_in[vertex2].push_back(e);
-        } else {
-            std::vector<WeightedEdge> temp1;
-            temp1.push_back(e);
-            vertex_in[vertex2] = temp1;
-        }
-
-        if(vertex_out.find(vertex1) != vertex_in.end()) {
-            vertex_in[vertex1].push_back(e);
-        } else {
-            std::vector<WeightedEdge> temp2;
-            temp2.push_back(e);
-            vertex_out[vertex1] = temp2;
-        }
         return true;
     } else {
         return false;
@@ -65,7 +47,7 @@ int WeightedGraph::CountVertices() const {
 }
 
 int WeightedGraph::CountEdges() const {
-    return Graph::CountEdges();
+    return edge_weight.size();
 }
 
 bool WeightedGraph::ContainsVertex(int vertex) const {
@@ -78,7 +60,7 @@ bool WeightedGraph::ContainsEdge(int vertex1, int vertex2) const {
 
 int WeightedGraph::GetWeight(int vertex1, int vertex2) const {
     auto it = edge_weight.find({vertex1,vertex2});
-    if(it == edge_weight.end())  return -1;
+    if(it == edge_weight.end())  return 0;
     else return it->second;
 }//查询v1指向v2的边的权重，如果这条边不存在则属于UB
 
@@ -108,6 +90,7 @@ std::vector<WeightedEdge> WeightedGraph::GetIncomingEdges(int vertex) const {
     }
     return ans;
 }
+
 std::vector<WeightedEdge> WeightedGraph::GetOutgoingEdges(int vertex) const {
     std::vector<WeightedEdge> ans;
     std::vector<Edge> edges = Graph::GetOutgoingEdges(vertex);

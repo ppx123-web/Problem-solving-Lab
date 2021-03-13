@@ -10,7 +10,7 @@
 #include <algorithm>
 
 
-#define MAX_VERTEX 2000
+#define MAX_VERTEX 5000
 
 class Graph {
 private:
@@ -20,7 +20,7 @@ private:
     std::vector<Edge>edges_out[MAX_VERTEX];
     std::vector<int>vertexes[MAX_VERTEX];
     std::unordered_map<int,int>vertex_map;
-    std::vector<int>vertex_set;
+    std::vector<int>vertex_set;//点的集合
 
 public:
     Graph();
