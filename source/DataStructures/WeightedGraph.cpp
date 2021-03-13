@@ -42,7 +42,7 @@ bool WeightedGraph::RemoveEdge(int vertex1, int vertex2) {
 }
 
 int WeightedGraph::CountVertices() const {
-    return Graph::CountEdges();
+    return Graph::CountVertices();
 
 }
 
