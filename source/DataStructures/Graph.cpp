@@ -150,8 +150,7 @@ std::vector<Edge> Graph::GetIncomingEdges(int vertex) const {
         auto it = edge_in.find(vertex);
         if(it == edge_in.end()) {
             return temp;
-        }
-        return edge_in.find(vertex)->second;
+        } else return edge_in.find(vertex)->second;
     }
 }
 
@@ -161,7 +160,7 @@ std::vector<Edge> Graph::GetOutgoingEdges(int vertex) const {
         return temp;
     } else {
         if(edge_out.find(vertex) == edge_out.end()) return temp;
-        return edge_out.find(vertex)->second;
+        else return edge_out.find(vertex)->second;
     }
 }
 
@@ -171,8 +170,7 @@ int Graph::GetDegree(int vertex) const {
     } else {
         if(edge_out.find(vertex) == edge_out.end()) {
             return 0;
-        }
-        return edge_out.find(vertex)->second.size();
+        } else return edge_out.find(vertex)->second.size();
     }
 }
 
