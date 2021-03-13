@@ -20,7 +20,7 @@ private:
     unordered_map<int,vector<Edge>> edge_out;
     unordered_map<int,vector<int>> vertex_in;
     unordered_map<int,vector<int>> vertex_out;
-    //unordered_map<int,int> vertex_map;
+    unordered_map<int,int> vertex_map;
 
     /*int vertex_cnt;
     std::vector<Edge>edges;
@@ -32,7 +32,7 @@ private:
 
 public:
 
-    std::unordered_map<int,int>vertex_map;
+    //std::unordered_map<int,int>vertex_map;
 
     Graph();
 

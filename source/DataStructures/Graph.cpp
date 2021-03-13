@@ -152,7 +152,6 @@ std::vector<Edge> Graph::GetIncomingEdges(int vertex) const {
             exit(0);
         return edge_in.find(vertex)->second;
     }
-
 }
 
 std::vector<Edge> Graph::GetOutgoingEdges(int vertex) const {
