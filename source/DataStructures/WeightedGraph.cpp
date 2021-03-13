@@ -29,17 +29,17 @@ bool WeightedGraph::AddEdge(int vertex1, int vertex2, int weight) {
         if(vertex_in.find(vertex2) != vertex_in.end()) {
             vertex_in[vertex2].push_back(e);
         } else {
-            std::vector<WeightedEdge> temp;
-            temp.push_back(e);
-            vertex_in[vertex2] = temp;
+            std::vector<WeightedEdge> temp1;
+            temp1.push_back(e);
+            vertex_in[vertex2] = temp1;
         }
 
         if(vertex_out.find(vertex1) != vertex_in.end()) {
             vertex_in[vertex1].push_back(e);
         } else {
-            std::vector<WeightedEdge> temp;
-            temp.push_back(e);
-            vertex_out[vertex1] = temp;
+            std::vector<WeightedEdge> temp2;
+            temp2.push_back(e);
+            vertex_out[vertex1] = temp2;
         }
         return true;
     } else {
@@ -51,11 +51,11 @@ bool WeightedGraph::AddEdge(int vertex1, int vertex2, int weight) {
 bool WeightedGraph::RemoveEdge(int vertex1, int vertex2) {
     if(edge_weight.find({vertex1,vertex2}) == edge_weight.end()) return false;
     else {
-
-
-        Graph::RemoveEdge(vertex1,vertex2);
-        edge_weight.erase({vertex1,vertex2});
-        return true;
+        bool ans = Graph::RemoveEdge(vertex1,vertex2);
+        if(ans) {
+            edge_weight.erase({vertex1,vertex2});
+        }
+        return ans;
     }
 }
 
