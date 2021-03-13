@@ -79,6 +79,7 @@ bool Graph::AddEdge(int vertex1, int vertex2) {
         if(!is_exit(vertex1,vertex2,vertex2,&vertex_out)) {
             return false;
         }
+        while (1);
         add(vertex1, vertex2, vertex2, &vertex_out);
         add(vertex2, vertex1, vertex1, &vertex_in);
         Edge e(vertex1, vertex2);
