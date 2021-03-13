@@ -35,7 +35,7 @@ bool WeightedGraph::RemoveEdge(int vertex1, int vertex2) {
     else {
         bool ans = Graph::RemoveEdge(vertex1,vertex2);
         if(ans) {
-            edge_weight[vertex_map[vertex1]].erase(vertex2);
+           //edge_weight[vertex_map[vertex1]].erase(vertex2);
         }
         return ans;
     }
