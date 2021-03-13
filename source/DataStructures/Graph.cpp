@@ -143,22 +143,24 @@ std::vector<Edge> Graph::GetEdges() const {
 
 
 std::vector<Edge> Graph::GetIncomingEdges(int vertex) const {
+    vector<Edge> temp;
     if (vertex_map.find(vertex) == vertex_map.end()) {
-        vector<Edge> temp;
         return temp;
     } else {
         auto it = edge_in.find(vertex);
-        if(it->second.empty())
-            exit(0);
+        if(it == edge_in.end()) {
+            return temp;
+        }
         return edge_in.find(vertex)->second;
     }
 }
 
 std::vector<Edge> Graph::GetOutgoingEdges(int vertex) const {
+    vector<Edge> temp;
     if (vertex_map.find(vertex) == vertex_map.end()) {
-        vector<Edge> temp;
         return temp;
     } else {
+        if(edge_out.find(vertex) == edge_out.end()) return temp;
         return edge_out.find(vertex)->second;
     }
 }
