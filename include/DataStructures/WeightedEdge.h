@@ -5,9 +5,9 @@
 
 class WeightedEdge : public Edge {
 private:
-    int weight;
+    int w;
 public:
-    WeightedEdge(int source, int destination, int w);
+    WeightedEdge(int source, int destination, int weight);
 
     ~WeightedEdge();
 

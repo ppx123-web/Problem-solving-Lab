@@ -14,8 +14,7 @@ WeightedGraph::~WeightedGraph() {
 }
 
 bool WeightedGraph::AddVertex(int vertex) {
-    bool ans =  Graph::AddVertex(vertex);
-    return ans;
+    return Graph::AddVertex(vertex);
 }
 
 bool WeightedGraph::RemoveVertex(int vertex) {

@@ -1,8 +1,8 @@
 #include <DataStructures/WeightedEdge.h>
 
-WeightedEdge::WeightedEdge(int source, int destination, int w) : Edge(source, destination) {
+WeightedEdge::WeightedEdge(int source, int destination, int weight) : Edge(source, destination) {
     Edge(source,destination);
-    weight = w;
+    w = weight;
 }
 
 WeightedEdge::~WeightedEdge() = default;
@@ -17,5 +17,5 @@ int WeightedEdge::GetDestination() const {
 }
 
 int WeightedEdge::GetWeight() const {
-    return weight;
+    return w;
 }
