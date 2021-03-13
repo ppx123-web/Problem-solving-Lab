@@ -10,7 +10,7 @@
 #include <algorithm>
 
 using namespace std;
-#define MAX_VERTEX 5000
+#define MAX_VERTEX 50000
 
 class Graph {
 private:
