@@ -76,8 +76,7 @@ bool Graph::AddEdge(int vertex1, int vertex2) {
     if (vertex_map.find(vertex1) == vertex_map.end() || vertex_map.find(vertex2) == vertex_map.end())
         return false;
     else {
-        while (1);
-        if(!is_exit(vertex1,vertex2,vertex2,&vertex_out)) {
+        if(is_exit(vertex1,vertex2,vertex2,&vertex_out)) {
             return false;
         }
         add(vertex1, vertex2, vertex2, &vertex_out);
