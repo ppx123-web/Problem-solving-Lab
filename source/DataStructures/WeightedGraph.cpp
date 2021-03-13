@@ -6,10 +6,7 @@ WeightedGraph::WeightedGraph() : Graph() {
     edge_weight.clear();
 }
 
-WeightedGraph::~WeightedGraph() {
-    Graph::~Graph();
-
-};
+WeightedGraph::~WeightedGraph() = default;
 
 bool WeightedGraph::AddVertex(int vertex) {
     return Graph::AddVertex(vertex);
