@@ -16,13 +16,14 @@ bool WeightedGraph::AddVertex(int vertex) {
 }
 
 bool WeightedGraph::RemoveVertex(int vertex) {
-    return Graph::RemoveVertex(vertex);
+    bool ans =  Graph::RemoveVertex(vertex);
+    return ans;
 }
 
 bool WeightedGraph::AddEdge(int vertex1, int vertex2, int weight) {
     bool ans = Graph::AddEdge(vertex1,vertex2);
     if(ans) {
-        //edge_weight[vertex_map[vertex1]][vertex2] = weight;
+        edge_weight[vertex_map[vertex1]][vertex2] = weight;
         return true;
     } else {
         return false;
@@ -35,7 +36,7 @@ bool WeightedGraph::RemoveEdge(int vertex1, int vertex2) {
     else {
         bool ans = Graph::RemoveEdge(vertex1,vertex2);
         if(ans) {
-           //edge_weight[vertex_map[vertex1]].erase(vertex2);
+            edge_weight[vertex_map[vertex1]].erase(vertex2);
         }
         return ans;
     }
@@ -61,7 +62,7 @@ bool WeightedGraph::ContainsEdge(int vertex1, int vertex2) const {
 int WeightedGraph::GetWeight(int vertex1, int vertex2) const {
     if(!Graph::ContainsEdge(vertex1,vertex2)) return false;
     else {
-        //int temp = vertex_map.find(vertex1)->second;
+        int temp = vertex_map.find(vertex1)->second;
         return edge_weight[temp].find(vertex2)->second;
     }
 
