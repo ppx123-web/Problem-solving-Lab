@@ -25,6 +25,7 @@ bool WeightedGraph::RemoveVertex(int vertex) {
             }
         }
     }
+    return ans;
 }
 
 bool WeightedGraph::AddEdge(int vertex1, int vertex2, int weight) {
