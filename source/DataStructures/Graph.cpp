@@ -42,11 +42,11 @@ bool Graph::RemoveVertex(int vertex) {
 template<class T>
 void add(int v1, int v2, T x, unordered_map<int, vector<T>> *vec) {
     if (vec->find(v1) != vec->end()) {
-        vec[v1].push_back(x);
+        (*vec)[v1].push_back(x);
     } else {
         vector<T> temp;
         temp.push_back(x);
-        vec[v1] = temp;
+        (*vec)[v1] = temp;
     }
 }
 
