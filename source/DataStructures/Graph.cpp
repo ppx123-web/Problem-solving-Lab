@@ -40,7 +40,6 @@ Graph::~Graph() {
     vertex_set.resize(0);
 }
 
-
 void Graph::clear() {
     Edge e(0,0);
     vertex_cnt = 0;
@@ -119,9 +118,6 @@ bool Graph::RemoveEdge(int vertex1, int vertex2) {
     }
 
 }
-
-
-
 
 int Graph::CountVertices() const {
     return vertex_set.size();
