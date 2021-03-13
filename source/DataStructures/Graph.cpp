@@ -110,10 +110,12 @@ bool Graph::RemoveEdge(int vertex1, int vertex2) {
             return false;
         } else {
             auto in = find(edges_in[vertex_map[vertex2]].begin(),edges_in[vertex_map[vertex2]].end(),e);
-            edges_in[vertex_map[vertex2]].erase(in);
+            if(in != edges_in[vertex_map[vertex2]].end())
+                edges_in[vertex_map[vertex2]].erase(in);
 
             auto out = find(edges_out[vertex_map[vertex1]].begin(),edges_out[vertex_map[vertex1]].end(),e);
-            edges_out[vertex_map[vertex1]].erase(in);
+            if(out != edges_out[vertex_map[vertex1]].end())
+                edges_out[vertex_map[vertex1]].erase(in);
 
             edges.erase(it);
             return true;
