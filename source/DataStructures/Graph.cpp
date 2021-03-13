@@ -182,7 +182,7 @@ std::vector<int> Graph::GetNeighbors(int vertex) const {
         return temp;
     } else {
         if(vertex_out.find(vertex) == vertex_out.end()) return temp;
-        return vertex_out.find(vertex)->second;
+        else return vertex_out.find(vertex)->second;
     }
 }
 
