@@ -22,9 +22,9 @@ int main() {
     assert(g.ContainsEdge(1, 2) == true);
     assert(g.ContainsEdge(2, 5) == false);
     assert(g.GetDegree(1) == 2);
-    exit(0);
     assert(g.GetIncomingEdges(1).empty());
     assert(g.GetOutgoingEdges(1).size() == 2);
+    exit(0);
     assert(g.GetNeighbors(1).size() == 2);
     assert(g.GetNeighbors(2).empty());
 }
