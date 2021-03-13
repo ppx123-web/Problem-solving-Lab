@@ -40,6 +40,25 @@ Graph::~Graph() {
     vertex_set.resize(0);
 }
 
+
+void Graph::clear() {
+    Edge e(0,0);
+    vertex_cnt = 0;
+    edges.clear();
+    edges.resize(0,e);
+    for(int i = 0;i < MAX_VERTEX;i++) {
+        edges_in[i].clear();
+        edges_in[i].resize(0,e);
+        edges_out[i].clear();
+        edges_out[i].resize(0,e);
+    }
+    for(auto & it : vertexes) {
+        it.clear();
+        it.resize(0);
+    }
+    vertex_set.clear();
+    vertex_set.resize(0);}
+
 bool Graph::AddVertex(int vertex) {
     if(vertex_map.find(vertex) == vertex_map.end()) {
         vertex_map[vertex] = ++vertex_cnt;
