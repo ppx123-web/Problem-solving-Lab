@@ -6,7 +6,7 @@ WeightedEdge::WeightedEdge(int source, int destination, int w) : Edge(source, de
 }
 
 WeightedEdge::~WeightedEdge() {
-    Edge::~Edge();
+    //Edge::~Edge();
     weight = 0;
 }
 
