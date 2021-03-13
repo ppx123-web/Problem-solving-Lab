@@ -67,8 +67,8 @@ bool is_exit(int v1, int v2, T x, const unordered_map<int, vector<T>> *vec) {
 
 template<class T>
 void delete_x(int v1, int v2, T x, unordered_map<int, vector<T>> *vec) {
-    auto it = find(vec[v1].begin(),vec[v1].end(),x);
-    vec[v1].erase(it);
+    auto it = find((*vec)[v1].begin(),(*vec)[v1].end(),x);
+    (*vec)[v1].erase(it);
 }
 
 
