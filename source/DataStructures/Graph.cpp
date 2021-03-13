@@ -174,10 +174,11 @@ int Graph::GetDegree(int vertex) const {
 }
 
 std::vector<int> Graph::GetNeighbors(int vertex) const {
+    vector<int> temp;
     if (vertex_map.find(vertex) == vertex_map.end()) {
-        vector<int> temp;
         return temp;
     } else {
+        if(vertex_out.find(vertex) == vertex_out.end()) return temp;
         return vertex_out.find(vertex)->second;
     }
 }
