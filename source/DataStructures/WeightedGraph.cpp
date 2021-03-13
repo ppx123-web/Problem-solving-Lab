@@ -16,9 +16,15 @@ bool WeightedGraph::AddVertex(int vertex) {
 }
 
 bool WeightedGraph::RemoveVertex(int vertex) {
-    bool ans =  Graph::RemoveVertex(vertex);
-    edge_weight[vertex_map[vertex]].clear();
-    return ans;
+    if(vertex_map.find(vertex) == vertex_map.end())
+        return false;
+    else {
+        edge_weight[vertex_map[vertex]].clear();
+        bool ans =  Graph::RemoveVertex(vertex);
+        return ans;
+    }
+
+
 }
 
 bool WeightedGraph::AddEdge(int vertex1, int vertex2, int weight) {
