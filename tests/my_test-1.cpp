@@ -28,6 +28,7 @@ int main() {
     assert(g.GetNeighbors(1).size() == 2);
     assert(g.GetNeighbors(2).empty());
     assert(g.RemoveEdge(1,2));
+    assert(g.GetWeight(1,2) == 1);
 }
 
 
