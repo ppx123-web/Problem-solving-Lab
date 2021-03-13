@@ -147,7 +147,7 @@ std::vector<Edge> Graph::GetIncomingEdges(int vertex) const {
         vector<Edge> temp;
         return temp;
     } else {
-        while (1);
+        exit(0);
         return edge_in.find(vertex)->second;
     }
 
