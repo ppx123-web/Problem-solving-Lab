@@ -9,18 +9,26 @@
 #include <utility>
 #include <algorithm>
 
-
+using namespace std;
 #define MAX_VERTEX 5000
 
 class Graph {
 private:
     int vertex_cnt;
+    std::vector<int>vertex_set;
+    unordered_map<int,vector<Edge>> edge_in;
+    unordered_map<int,vector<Edge>> edge_out;
+    unordered_map<int,vector<int>> vertex_in;
+    unordered_map<int,vector<int>> vertex_out;
+    //unordered_map<int,int> vertex_map;
+
+    /*int vertex_cnt;
     std::vector<Edge>edges;
     std::vector<Edge>edges_in[MAX_VERTEX];
     std::vector<Edge>edges_out[MAX_VERTEX];
     std::vector<int>vertexes[MAX_VERTEX];
 
-    std::vector<int>vertex_set;//点的集合
+    std::vector<int>vertex_set;//点的集合*/
 
 public:
 
