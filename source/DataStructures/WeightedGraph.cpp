@@ -20,6 +20,7 @@ bool WeightedGraph::RemoveVertex(int vertex) {
     if(ans) {
         edge_weight[vertex_map[vertex]].clear();
     }
+    printf("%d\n",ans);
     return ans;
 }
 
