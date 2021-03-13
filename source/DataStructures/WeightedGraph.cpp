@@ -61,7 +61,7 @@ bool WeightedGraph::ContainsEdge(int vertex1, int vertex2) const {
 int WeightedGraph::GetWeight(int vertex1, int vertex2) const {
     if(!Graph::ContainsEdge(vertex1,vertex2)) return false;
     else {
-        int temp = vertex_map.find(vertex1)->second;
+        //int temp = vertex_map.find(vertex1)->second;
         return edge_weight[temp].find(vertex2)->second;
     }
 
