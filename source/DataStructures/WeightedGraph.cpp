@@ -12,16 +12,17 @@ WeightedGraph::~WeightedGraph() {
 };
 
 bool WeightedGraph::AddVertex(int vertex) {
-    Graph::AddVertex(vertex);
+    return Graph::AddVertex(vertex);
 }
 
 bool WeightedGraph::RemoveVertex(int vertex) {
-    Graph::RemoveVertex(vertex);
+    return Graph::RemoveVertex(vertex);
 }
 
 bool WeightedGraph::AddEdge(int vertex1, int vertex2, int weight) {
-    Graph::AddEdge(vertex1,vertex2);
-    edge_weight[{vertex1,vertex2}] = weight;
+    bool ans = Graph::AddEdge(vertex1,vertex2);
+    if(ans) edge_weight[{vertex1,vertex2}] = weight;
+    return ans;
 }
 
 //添加了权重参数；如果添加某条边时图中已经存在了相同起点和终点的边（无论权重是多少），则什么都不做并返回false
