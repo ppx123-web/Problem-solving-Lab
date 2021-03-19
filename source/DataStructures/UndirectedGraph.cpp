@@ -8,11 +8,11 @@ UndirectedGraph::~UndirectedGraph() {
 }
 
 bool UndirectedGraph::AddVertex(int vertex) {
-    Graph::AddVertex(vertex);
+    return Graph::AddVertex(vertex);
 }
 
 bool UndirectedGraph::RemoveVertex(int vertex) {
-    Graph::RemoveVertex(vertex);
+    return Graph::RemoveVertex(vertex);
 }
 
 bool UndirectedGraph::AddEdge(int vertex1, int vertex2) {
