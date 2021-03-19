@@ -35,8 +35,13 @@ int UndirectedWeightedGraph::CountVertices() const {
 }
 
 int UndirectedWeightedGraph::CountEdges() const {
-    vector<WeightedEdge> UWG = UndirectedWeightedGraph::GetEdges();
-    return UWG.size();
+    int ans = WeightedGraph::CountEdges();
+    for(auto item:WeightedGraph::GetVertices()) {
+        if(WeightedGraph::ContainsEdge(item,item)) {
+            ans++;
+        }
+    }
+    return ans;
 }
 
 
