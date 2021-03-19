@@ -5,7 +5,6 @@ WeightedGraph::WeightedGraph() : Graph() {
 }
 
 WeightedGraph::~WeightedGraph() {
-    Graph::clear();
     for(int i = 0;i < MAX_VERTEX;i++) {
         edge_weight[i].clear();
     }

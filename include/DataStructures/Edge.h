@@ -13,7 +13,7 @@ public:
     ~Edge();
 
 public:
-    int GetSource() const;
+    virtual int GetSource() const;
 
     int GetDestination() const;
 

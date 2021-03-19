@@ -11,7 +11,7 @@ public:
 
     ~WeightedEdge();
 
-    int GetSource() const;
+    int GetSource() const override;
 
     int GetDestination() const;
 
