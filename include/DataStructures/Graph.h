@@ -36,7 +36,7 @@ public:
 
     Graph();
 
-    ~Graph();
+    virtual ~Graph();
 
 
     void clear();
