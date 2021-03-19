@@ -34,7 +34,8 @@ int UndirectedGraph::CountVertices() const {
 }
 
 int UndirectedGraph::CountEdges() const {
-    return Graph::CountEdges()/2;
+    vector<Edge> UWG = Graph::GetEdges();
+    return UWG.size();
 }
 
 bool UndirectedGraph::ContainsVertex(int vertex) const {

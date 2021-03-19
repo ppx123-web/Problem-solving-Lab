@@ -35,7 +35,8 @@ int UndirectedWeightedGraph::CountVertices() const {
 }
 
 int UndirectedWeightedGraph::CountEdges() const {
-    return WeightedGraph::CountEdges()/2;
+    vector<WeightedEdge> UWG = UndirectedWeightedGraph::GetEdges();
+    return UWG.size();
 }
 
 
