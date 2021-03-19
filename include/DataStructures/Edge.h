@@ -13,9 +13,9 @@ public:
     ~Edge();
 
 public:
-    virtual int GetSource() const;
+    int GetSource() const;
 
-    virtual int GetDestination() const;
+    int GetDestination() const;
 
 
     bool operator == (const Edge& e) const {
