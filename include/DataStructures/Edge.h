@@ -15,7 +15,7 @@ public:
 public:
     virtual int GetSource() const;
 
-    int GetDestination() const;
+    virtual int GetDestination() const;
 
 
     bool operator == (const Edge& e) const {
