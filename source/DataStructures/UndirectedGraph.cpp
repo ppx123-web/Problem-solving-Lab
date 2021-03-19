@@ -40,7 +40,7 @@ int UndirectedGraph::CountEdges() const {
             ans++;
         }
     }
-    return ans;
+    return ans/2;
 }
 
 bool UndirectedGraph::ContainsVertex(int vertex) const {

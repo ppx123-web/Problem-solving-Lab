@@ -41,7 +41,7 @@ int UndirectedWeightedGraph::CountEdges() const {
             ans++;
         }
     }
-    return ans;
+    return ans/2;
 }
 
 
