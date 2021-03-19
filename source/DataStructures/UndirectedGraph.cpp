@@ -5,7 +5,6 @@ UndirectedGraph::UndirectedGraph():Graph() {
 }
 
 UndirectedGraph::~UndirectedGraph() {
-    Graph::~Graph();
 }
 
 bool UndirectedGraph::AddVertex(int vertex) {
