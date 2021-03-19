@@ -66,3 +66,25 @@ std::vector<WeightedEdge> UndirectedWeightedGraph::GetEdges() const {
     }
     return ans;
 }
+
+std::vector<WeightedEdge> UndirectedWeightedGraph::GetIncomingEdges(int vertex) const {
+    return WeightedGraph::GetIncomingEdges(vertex);
+}
+
+std::vector<WeightedEdge> UndirectedWeightedGraph::GetOutgoingEdges(int vertex) const {
+    return WeightedGraph::GetOutgoingEdges(vertex);
+}
+
+int UndirectedWeightedGraph::GetDegree(int vertex) const {
+    vector<int> deg = WeightedGraph::GetNeighbors(vertex);
+    for(auto it:deg) {
+        if(it == vertex) {
+            return deg.size() + 1;
+        }
+    }
+    return deg.size();
+}
+
+std::vector<int> UndirectedWeightedGraph::GetNeighbors(int vertex) const {
+    return WeightedGraph::GetNeighbors(vertex);
+}
