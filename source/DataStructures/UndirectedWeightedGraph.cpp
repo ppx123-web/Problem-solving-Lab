@@ -30,6 +30,15 @@ bool UndirectedWeightedGraph::RemoveEdge(int vertex1, int vertex2) {
     }
 }
 
+int UndirectedWeightedGraph::CountVertices() const {
+    return WeightedGraph::CountVertices();
+}
+
+int UndirectedWeightedGraph::CountEdges() const {
+    return WeightedGraph::CountEdges()/2;
+}
+
+
 bool UndirectedWeightedGraph::ContainsVertex(int vertex) const {
     return WeightedGraph::ContainsVertex(vertex);
 }
