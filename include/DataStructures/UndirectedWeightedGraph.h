@@ -5,9 +5,9 @@
 
 class UndirectedWeightedGraph: public WeightedGraph {
 public:
-    WeightedGraph();
+    UndirectedWeightedGraph();
 
-    ~WeightedGraph();
+    ~UndirectedWeightedGraph();
 
     bool AddVertex(int vertex);
 
