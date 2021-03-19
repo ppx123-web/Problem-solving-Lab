@@ -64,4 +64,5 @@ std::vector<WeightedEdge> UndirectedWeightedGraph::GetEdges() const {
             ans.erase(it);
         }
     }
+    return ans;
 }
