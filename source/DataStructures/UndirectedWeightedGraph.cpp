@@ -48,10 +48,11 @@ std::vector<int> UndirectedWeightedGraph::GetVertices() const {
 
 std::vector<WeightedEdge> UndirectedWeightedGraph::GetEdges() const {
     std::vector<WeightedEdge> ans = WeightedGraph::GetEdges();
-    std::map<WeightedEdge,int> s;
+    std::map<pair<pair<int,int>,int>,int> s;
     for(auto it = ans.begin();it != ans.end();it++) {
-        WeightedEdge e1(it->GetSource(),it->GetDestination(),it->GetWeight());
-        WeightedEdge e2(it->GetDestination(),it->GetSource(),it->GetWeight());
+        pair<pair<int,int>,int> e1,e2;
+        e1.first.first = it->GetSource(); e1.first.second = it->GetDestination(); e1.second = it->GetWeight();
+        e2.first.first = it->GetDestination(); e2.first.second = it->GetSource(); e2.second = it->GetWeight();
         auto front = s.find(e1);
         auto back = s.find(e2);
         if(front != s.end()) {
