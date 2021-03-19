@@ -1,7 +1,7 @@
 #ifndef EDGE_H
 #define EDGE_H
 
-#define NONE_VERTEX 0x7fffffff
+//#define NONE_VERTEX 0x7fffffff
 
 class Edge {
 private:
@@ -13,7 +13,7 @@ public:
     ~Edge();
 
 public:
-    int GetSource() const;
+    virtual int GetSource() const;
 
     virtual int GetDestination() const;
 

@@ -7,7 +7,7 @@ class UndirectedWeightedGraph: public WeightedGraph {
 public:
     UndirectedWeightedGraph();
 
-    ~UndirectedWeightedGraph();
+    ~UndirectedWeightedGraph() override;
 
     bool AddVertex(int vertex);
 

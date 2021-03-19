@@ -16,7 +16,7 @@ private:
 public:
     WeightedGraph();
 
-    ~WeightedGraph();
+    ~WeightedGraph() override;
 
     bool AddVertex(int vertex);
 
