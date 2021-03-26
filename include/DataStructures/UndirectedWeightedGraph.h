@@ -11,7 +11,7 @@ public:
 
     }
 
-    ~UndirectedWeightedGraph() override;
+    ~UndirectedWeightedGraph() override = default;
 
     bool AddVertex(int vertex) {
         return WeightedGraph<Weight_T>::AddVertex(vertex);
