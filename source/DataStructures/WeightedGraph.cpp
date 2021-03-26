@@ -1,5 +1,6 @@
 #include <DataStructures/WeightedGraph.h>
 
+/*
 WeightedGraph::WeightedGraph() : Graph() {
     Graph();
 }
@@ -119,4 +120,4 @@ int WeightedGraph::GetDegree(int vertex) const {
 
 std::vector<int> WeightedGraph::GetNeighbors(int vertex) const {
     return Graph::GetNeighbors(vertex);
-}
+}*/
