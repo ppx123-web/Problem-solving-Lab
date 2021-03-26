@@ -18,27 +18,27 @@ public:
 
     ~WeightedGraph() override;
 
-    bool AddVertex(int vertex);
+    bool AddVertex(int vertex) override;
 
-    bool RemoveVertex(int vertex);
+    bool RemoveVertex(int vertex) override;
 
     bool AddEdge(int vertex1, int vertex2, int weight);
 
     //添加了权重参数；如果添加某条边时图中已经存在了相同起点和终点的边（无论权重是多少），则什么都不做并返回false
-    bool RemoveEdge(int vertex1, int vertex2);
+    bool RemoveEdge(int vertex1, int vertex2) override;
 
-    int CountVertices() const;
+    int CountVertices() const override;
 
-    int CountEdges() const;
+    int CountEdges() const override;
 
-    bool ContainsVertex(int vertex) const;
+    bool ContainsVertex(int vertex) const override;
 
-    bool ContainsEdge(int vertex1, int vertex2) const;
+    bool ContainsEdge(int vertex1, int vertex2) const override;
 
     int GetWeight(int vertex1, int vertex2) const;
 
     //查询v1指向v2的边的权重，如果这条边不存在则属于UB
-    std::vector<int> GetVertices() const;
+    std::vector<int> GetVertices() const override;
 
     std::vector<WeightedEdge> GetEdges() const;
 
@@ -46,9 +46,9 @@ public:
 
     std::vector<WeightedEdge> GetOutgoingEdges(int vertex) const;
 
-    int GetDegree(int vertex) const;
+    int GetDegree(int vertex) const override;
 
-    std::vector<int> GetNeighbors(int vertex) const;
+    std::vector<int> GetNeighbors(int vertex) const override;
 
 };
 
