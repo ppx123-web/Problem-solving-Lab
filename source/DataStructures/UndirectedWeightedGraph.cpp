@@ -1,3 +1,4 @@
+/*
 #include <DataStructures/UndirectedWeightedGraph.h>
 
 UndirectedWeightedGraph::UndirectedWeightedGraph():WeightedGraph() {
@@ -103,3 +104,4 @@ int UndirectedWeightedGraph::GetDegree(int vertex) const {
 std::vector<int> UndirectedWeightedGraph::GetNeighbors(int vertex) const {
     return WeightedGraph::GetNeighbors(vertex);
 }
+*/

@@ -10,7 +10,7 @@ private:
     Weight_t w;
 public:
     WeightedEdge(int source, int destination, Weight_t weight): Edge(source,destination) {
-        Edge(source,destination);
+        //Edge(source,destination);
         w = weight;
     }
 

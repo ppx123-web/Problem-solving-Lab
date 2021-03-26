@@ -15,8 +15,8 @@ private:
 
     unordered_map<int, Weight_t> edge_weight[MAX_VERTEX];
 public:
-    WeightedGraph() {
-        Graph();
+    WeightedGraph():Graph() {
+        
     }
 
     ~WeightedGraph() override {
