@@ -14,7 +14,7 @@ public:
         w = weight;
     }
 
-    ~WeightedEdge();
+    ~WeightedEdge() =default;
 
     int GetSource() const override {
         return Edge::GetSource();
