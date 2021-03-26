@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    WeightedGraph<double> g;
+    UndirectedWeightedGraph<double> g;
 
     assert(g.AddVertex(1) == true);
     assert(g.AddVertex(2) == true);
