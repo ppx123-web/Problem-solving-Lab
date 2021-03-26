@@ -16,7 +16,7 @@ private:
     unordered_map<int, Weight_t> edge_weight[MAX_VERTEX];
 public:
     WeightedGraph():Graph() {
-        
+
     }
 
     ~WeightedGraph() override {
@@ -107,7 +107,7 @@ public:
         std::vector<Edge> edges = Graph::GetIncomingEdges(vertex);
         for(const auto& item:edges) {
             auto it = edge_weight[vertex_map.find(item.GetSource())->second].find(item.GetDestination());
-            WeightedEdge e(item.GetSource(),item.GetDestination(),it->second);
+            WeightedEdge<Weight_t> e(item.GetSource(),item.GetDestination(),it->second);
             ans.push_back(e);
         }
         return ans;
@@ -118,7 +118,7 @@ public:
         std::vector<Edge> edges = Graph::GetOutgoingEdges(vertex);
         for(const auto& item:edges) {
             auto it = edge_weight[vertex_map.find(item.GetSource())->second].find(item.GetDestination());
-            WeightedEdge e(item.GetSource(),item.GetDestination(),it->second);
+            WeightedEdge<Weight_t> e(item.GetSource(),item.GetDestination(),it->second);
             ans.push_back(e);
         }
         return ans;
