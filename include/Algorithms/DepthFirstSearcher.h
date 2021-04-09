@@ -17,7 +17,7 @@ class DepthFirstSearcher {
 public:
     static unordered_map<int,int>vis_all;
     static unordered_map<int,int>vis_opt;
- public:
+public:
     static void VisitAllVertices(const TGraph *graph, int start, const std::function<void(int)> &action);
     static std::optional<int> FindFirstVertex(const TGraph *graph, int start, const std::function<bool(int)> &predicate);
 };
@@ -42,7 +42,7 @@ DepthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *graph, int start, cons
         return start;
     }
     for(int u:graph->GetNeighbors(start)) {
-        if(vis_all.find(u) == vis_all.end()) {
+        if(vis_opt.find(u) == vis_opt.end()) {
             if(predicate(u)) return u;
             return FindFirstVertex(graph,u,predicate);
         }
