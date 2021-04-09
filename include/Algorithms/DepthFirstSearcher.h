@@ -15,15 +15,7 @@ using namespace std;
 template <typename TGraph>
 class DepthFirstSearcher {
  public:
-    static void VisitAllVertices(const TGraph *graph, int start, const std::function<void(int)> &action) {
-        unordered_map<int,int> vis;
-        vis[start] = 1;
-        for(const int u:graph->GetNeighbors(cur)) {
-            if()
-        }
-    }
-
-
+    static void VisitAllVertices(const TGraph *graph, int start, const std::function<void(int)> &action);
     static std::optional<int> FindFirstVertex(const TGraph *graph, int start, const std::function<bool(int)> &predicate);
 };
 
