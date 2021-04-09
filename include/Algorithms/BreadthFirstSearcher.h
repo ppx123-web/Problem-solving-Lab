@@ -23,14 +23,15 @@ void BreadthFirstSearcher<TGraph>::VisitAllVertices(const TGraph *graph, int sta
     unordered_map<int,int> vis;
     queue<int> q;
     q.push(start);
+    action(start);
     while (!q.empty()) {
         int cur = q.front();
         q.pop();
         vis[cur] = 1;
-        action(cur);
         for(int u : graph->GetNeighbors(cur)) {
             if(vis.find(u) == vis.end()) {
                 q.push(u);
+                action(u);
             }
         }
     }
@@ -42,20 +43,20 @@ BreadthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *graph, int start, co
     unordered_map<int,int> vis;
     queue<int> q;
     q.push(start);
+    if(predicate(start)) return start;
     while (!q.empty()) {
         int cur = q.front();
         q.pop();
         vis[cur] = 1;
-        if(predicate(cur)) {
-            return cur;
-        }
         for(int u : graph->GetNeighbors(cur)) {
             if(vis.find(u) == vis.end()) {
                 q.push(u);
+                if(predicate(u)) return u;
             }
         }
     }
-    return std::optional<int>(NULL);
+
+    return std::optional<int>();
 }
 
 #endif

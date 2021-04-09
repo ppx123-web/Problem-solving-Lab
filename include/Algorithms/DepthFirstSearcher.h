@@ -30,9 +30,9 @@ unordered_map<int,int> DepthFirstSearcher<TGraph>::vis_opt;
 template<typename TGraph>
 void DepthFirstSearcher<TGraph>::VisitAllVertices(const TGraph *graph, int start, const function<void(int)> &action) {
     DepthFirstSearcher<TGraph>::vis_all[start] = 1;
+    action(start);
     for(int u:graph->GetNeighbors(start)) {
         if(DepthFirstSearcher<TGraph>::vis_all.find(u) == DepthFirstSearcher<TGraph>::vis_all.end()) {
-            action(u);
             VisitAllVertices(graph,u,action);
         }
     }
@@ -52,7 +52,7 @@ DepthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *graph, int start, cons
         }
     }
 
-    return std::optional<int>(NULL);
+    return std::optional<int>();
 }
 
 #endif
