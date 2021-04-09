@@ -44,14 +44,15 @@ BreadthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *graph, int start, co
     unordered_map<int,int> vis;
     queue<int> q;
     q.push(start);
+    vis[start] = 1;
     if(predicate(start)) return start;
     while (!q.empty()) {
         int cur = q.front();
         q.pop();
-        vis[cur] = 1;
         for(int u : graph->GetNeighbors(cur)) {
             if(vis.find(u) == vis.end()) {
                 q.push(u);
+                vis[u] = 1;
                 if(predicate(u)) return u;
             }
         }
