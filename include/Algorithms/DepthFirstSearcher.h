@@ -22,6 +22,11 @@ public:
     static std::optional<int> FindFirstVertex(const TGraph *graph, int start, const std::function<bool(int)> &predicate);
 };
 
+template <typename TGraph>
+unordered_map<int,int> DepthFirstSearcher<TGraph>::vis_all;
+template <typename TGraph>
+unordered_map<int,int> DepthFirstSearcher<TGraph>::vis_opt;
+
 template<typename TGraph>
 void DepthFirstSearcher<TGraph>::VisitAllVertices(const TGraph *graph, int start, const function<void(int)> &action) {
     DepthFirstSearcher<TGraph>::vis_all[start] = 1;
