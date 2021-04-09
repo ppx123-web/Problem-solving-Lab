@@ -55,7 +55,7 @@ BreadthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *graph, int start, co
             }
         }
     }
-    return std::optional<int>();
+    return NULL;
 }
 
 #endif
