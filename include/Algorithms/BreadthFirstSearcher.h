@@ -20,6 +20,7 @@ class BreadthFirstSearcher {
 
 template<typename TGraph>
 void BreadthFirstSearcher<TGraph>::VisitAllVertices(const TGraph *graph, int start, const function<void(int)> &action) {
+    if(!graph->ContainsVertex(start)) return;
     unordered_map<int,int> vis;
     queue<int> q;
     q.push(start);
@@ -41,6 +42,7 @@ void BreadthFirstSearcher<TGraph>::VisitAllVertices(const TGraph *graph, int sta
 template<typename TGraph>
 std::optional<int>
 BreadthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *graph, int start, const function<bool(int)> &predicate) {
+    if(!graph->ContainsVertex(start)) return nullopt;
     unordered_map<int,int> vis;
     queue<int> q;
     q.push(start);
