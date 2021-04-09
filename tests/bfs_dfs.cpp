@@ -14,6 +14,6 @@ int main() {
     }
     DepthFirstSearcher<Graph>::FindFirstVertex(&g, 1, [] (int a) -> bool {
         cout << a << endl;
-        return a == 5;
+        return a == 6;
     });
 }
