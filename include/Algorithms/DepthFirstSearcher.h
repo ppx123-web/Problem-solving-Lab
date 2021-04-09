@@ -24,9 +24,9 @@ public:
 
 template<typename TGraph>
 void DepthFirstSearcher<TGraph>::VisitAllVertices(const TGraph *graph, int start, const function<void(int)> &action) {
-    vis_all[start] = 1;
+    DepthFirstSearcher::vis_all[start] = 1;
     for(int u:graph->GetNeighbors(start)) {
-        if(vis_all.find(u) == vis_all.end()) {
+        if(DepthFirstSearcher::vis_all.find(u) == DepthFirstSearcher::vis_all.end()) {
             action(u);
             VisitAllVertices(graph,u,action);
         }
@@ -37,12 +37,12 @@ void DepthFirstSearcher<TGraph>::VisitAllVertices(const TGraph *graph, int start
 template<typename TGraph>
 std::optional<int>
 DepthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *graph, int start, const function<bool(int)> &predicate) {
-    vis_opt[start] = 1;
+    DepthFirstSearcher::vis_opt[start] = 1;
     if(predicate(start)) {
         return start;
     }
     for(int u:graph->GetNeighbors(start)) {
-        if(vis_opt.find(u) == vis_opt.end()) {
+        if(DepthFirstSearcher::vis_opt.find(u) == DepthFirstSearcher::vis_opt.end()) {
             if(predicate(u)) return u;
             return FindFirstVertex(graph,u,predicate);
         }
