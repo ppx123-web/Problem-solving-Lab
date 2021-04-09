@@ -56,7 +56,7 @@ DepthFirstSearcher<TGraph>::dfs_vis_opt(const TGraph *graph, int start, const fu
     for(int u:graph->GetNeighbors(start)) {
         if(vis_opt.find(u) == vis_opt.end()) {
             std::optional<int> ret;
-            if( (ret = FindFirstVertex(graph,u,predicate)) != std::optional<int>()) {
+            if((ret = FindFirstVertex(graph,u,predicate,vis_opt))) {
                 return ret;
             }
         }
