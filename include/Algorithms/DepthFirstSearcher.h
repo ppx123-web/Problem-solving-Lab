@@ -52,7 +52,7 @@ DepthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *graph, int start, cons
         }
     }
 
-    return NULL;
+    return std::optional<int>(NULL);
 }
 
 #endif
