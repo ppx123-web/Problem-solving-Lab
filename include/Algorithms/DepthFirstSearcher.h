@@ -14,7 +14,7 @@ using namespace std;
 
 template <typename TGraph>
 class DepthFirstSearcher {
-private:
+public:
     static unordered_map<int,int>vis_all;
     static unordered_map<int,int>vis_opt;
  public:
