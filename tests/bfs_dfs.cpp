@@ -12,8 +12,8 @@ int main() {
         assert(g.AddVertex(i));
         assert(g.AddEdge(i - 1, i));
     }
-    BreadthFirstSearcher<Graph>::FindFirstVertex(&g, 2, [] (int a) -> bool {
+    BreadthFirstSearcher<Graph>::VisitAllVertices(&g, 2, [] (int a) {
         cout << a << endl;
-        return a == 3;
+        //return a == 3;
     });
 }
