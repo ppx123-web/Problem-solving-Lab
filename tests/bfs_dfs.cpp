@@ -6,15 +6,14 @@ using namespace std;
 
 
 int main() {
-    UndirectedGraph g;
-    assert(g.AddVertex(1));
+    Graph g;
+    assert(g.AddVertex(1) == true);
     for(int i = 2; i <= 5; ++i) {
-        assert(g.AddVertex(i));
-        assert(g.AddEdge(i - 1, i));
+        assert(g.AddVertex(i) == true);
+        assert(g.AddEdge(i - 1, i) == true);
     }
-    g.AddEdge(1,3);
-    DepthFirstSearcher<Graph>::VisitAllVertices(&g, 1, [] (int a) {
+    DepthFirstSearcher<Graph>::FindFirstVertex(&g, 1, [] (int a) -> bool {
         cout << a << endl;
-        //return a == 3;
+        return a == 3;
     });
 }

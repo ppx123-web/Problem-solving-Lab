@@ -24,6 +24,7 @@ public:
 
 template<typename TGraph>
 void DepthFirstSearcher<TGraph>::VisitAllVertices(const TGraph *graph, int start, const function<void(int)> &action) {
+    if(!graph->ContainsVertex(start)) return;
     unordered_map<int,int> vis;
     dfs_vis_all(graph,start,action,vis);
 }
@@ -42,6 +43,7 @@ void DepthFirstSearcher<TGraph>::dfs_vis_all(const TGraph *graph, int start, con
 template<typename TGraph>
 std::optional<int>
 DepthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *graph, int start, const function<bool(int)> &predicate) {
+    if(!graph->ContainsVertex(start)) return nullopt;
     unordered_map<int,int> vis;
     return dfs_vis_opt(graph,start,predicate,vis);
 }
