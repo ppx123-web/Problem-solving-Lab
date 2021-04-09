@@ -6,7 +6,7 @@ using namespace std;
 
 
 int main() {
-    Graph g;
+    UndirectedGraph g;
     assert(g.AddVertex(1));
     for(int i = 2; i <= 5; ++i) {
         assert(g.AddVertex(i));
