@@ -49,7 +49,7 @@ DepthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *graph, int start, cons
     for(int u:graph->GetNeighbors(start)) {
         if(DepthFirstSearcher<TGraph>::vis_opt.find(u) == DepthFirstSearcher<TGraph>::vis_opt.end()) {
             std::optional<int> ret;
-            if( (ret = FindFirstVertex(graph,u,predicate)) != NULL) {
+            if( (ret = FindFirstVertex(graph,u,predicate)) != std::optional<int>()) {
                 return ret;
             }
         }
