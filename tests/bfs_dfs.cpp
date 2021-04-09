@@ -12,6 +12,7 @@ int main() {
         assert(g.AddVertex(i));
         assert(g.AddEdge(i - 1, i));
     }
+    g.AddEdge(1,10);
     BreadthFirstSearcher<Graph>::VisitAllVertices(&g, 1, [] (int a) {
         cout << a << endl;
         //return a == 3;
