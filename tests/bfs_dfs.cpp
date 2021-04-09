@@ -12,7 +12,7 @@ int main() {
         assert(g.AddVertex(i));
         assert(g.AddEdge(i - 1, i));
     }
-    DepthFirstSearcher<Graph>::FindFirstVertex(&g, 2, [] (int a) -> bool {
+    BreadthFirstSearcher<Graph>::FindFirstVertex(&g, 2, [] (int a) -> bool {
         cout << a << endl;
         return a == 3;
     });
