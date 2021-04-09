@@ -24,13 +24,14 @@ void BreadthFirstSearcher<TGraph>::VisitAllVertices(const TGraph *graph, int sta
     queue<int> q;
     q.push(start);
     action(start);
+    vis[start] = 1;
     while (!q.empty()) {
         int cur = q.front();
         q.pop();
-        vis[cur] = 1;
         for(int u : graph->GetNeighbors(cur)) {
             if(vis.find(u) == vis.end()) {
                 q.push(u);
+                vis[u] = 1;
                 action(u);
             }
         }
