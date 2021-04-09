@@ -37,7 +37,7 @@ void DepthFirstSearcher<TGraph>::VisitAllVertices(const TGraph *graph, int start
 template<typename TGraph>
 std::optional<int>
 DepthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *graph, int start, const function<bool(int)> &predicate) {
-    vis_all[start] = 1;
+    vis_opt[start] = 1;
     if(predicate(start)) {
         return start;
     }
