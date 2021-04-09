@@ -48,7 +48,10 @@ DepthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *graph, int start, cons
     }
     for(int u:graph->GetNeighbors(start)) {
         if(DepthFirstSearcher<TGraph>::vis_opt.find(u) == DepthFirstSearcher<TGraph>::vis_opt.end()) {
-            return FindFirstVertex(graph,u,predicate);
+            int ret;
+            if( (ret = FindFirstVertex(graph,u,predicate)) != NULL) {
+                return ret;
+            }
         }
     }
 
