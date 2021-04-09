@@ -30,3 +30,6 @@ target_link_libraries(Test01 GraphLibrary)
 
 add_executable(my_test_1 tests/my_test-1.cpp)
 target_link_libraries(my_test_1 GraphLibrary)
+
+add_executable(my_test_2 tests/bfs_dfs.cpp)
+target_link_libraries(my_test_2 GraphLibrary)
