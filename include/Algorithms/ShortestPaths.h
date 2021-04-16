@@ -13,7 +13,7 @@ class ShortestPaths {
 protected:
     unordered_map<int, TValue> vis;
     unordered_map<int, TValue> cost;
-    unordered_map<int, TValue> parent;
+    unordered_map<int, int> parent;
     int src;
 public:
     ShortestPaths() {
