@@ -6,6 +6,7 @@ int main() {
     g->AddVertex(1);
     g->AddVertex(2);
     g->AddVertex(3);
+    g->AddVertex(4);
     g->AddEdge(1, 2, 100);
     g->AddEdge(1, 3, 100);
     g->AddEdge(3, 4, 100);
