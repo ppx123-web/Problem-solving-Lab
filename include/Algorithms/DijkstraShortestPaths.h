@@ -17,11 +17,11 @@ public:
     ~DijkstraShortestPaths();
 
 public:
-    bool HasPathTo(int destination) const;
+    bool HasPathTo(int destination)  const override;
 
-    std::optional<TValue> TryGetDistanceTo(int destination) const;
+    std::optional<TValue> TryGetDistanceTo(int destination) const override;
 
-    std::optional<std::vector<int>> TryGetShortestPathTo(int destination) const;
+    std::optional<std::vector<int>> TryGetShortestPathTo(int destination) const override;
 
     struct cmp {
         bool operator()(pair<int, TValue> ele_1, pair<int, TValue> ele_2) {
