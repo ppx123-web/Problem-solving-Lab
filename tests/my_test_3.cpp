@@ -13,9 +13,7 @@ int main() {
 
     ShortestPaths<WeightedGraph, int>
             *p = new DijkstraShortestPaths<WeightedGraph, int>(g, 1);
-    for(auto it:p->TryGetShortestPathTo(4)) {
-        cout<<it<<endl;
-    }
+    cout << p->HasPathTo(5) << endl;
     delete p;
     return 0;
 }
