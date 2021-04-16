@@ -12,7 +12,7 @@ template<template<typename> class TGraph, typename TValue>
 class ShortestPaths {
 
 public:
-    ShortestPaths() = delete;
+    ShortestPaths();
 
     ShortestPaths(const TGraph<TValue> *graph, int source);
 
