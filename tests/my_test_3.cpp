@@ -8,7 +8,7 @@ int main() {
 
     ShortestPaths<WeightedGraph, int>
             *p = new DijkstraShortestPaths<WeightedGraph, int>(g, 1);
-    cout << p->TryGetDistanceTo(2) << endl;
+    cout << p->TryGetDistanceTo(2).value_or(114514) << endl;
     delete p;
     return 0;
 }
