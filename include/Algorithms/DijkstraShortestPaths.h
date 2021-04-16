@@ -29,6 +29,7 @@ public:
 
 template<template<typename> class TGraph, typename TValue>
 DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(TGraph<TValue> *graph, int src):ShortestPaths<TGraph,TValue>(){
+    ShortestPaths<TGraph,TValue>::src = src;
     priority_queue<pair<int, TValue>, vector<pair<int, TValue>>, cmp> pq;
     ShortestPaths<TGraph,TValue>::cost[src] = TValue();
     pq.emplace(src, ShortestPaths<TGraph,TValue>::cost[src]);
@@ -39,7 +40,7 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(TGraph<TValue> *gra
         pq.pop();
         if (ShortestPaths<TGraph,TValue>::vis.find(cur_idx) != ShortestPaths<TGraph,TValue>::vis.end()) continue;
         ShortestPaths<TGraph,TValue>::vis[cur_idx] = 1;
-        for (auto next:graph->GetOutgoingEdges(cur_idx)) {
+        for (const auto& next:graph->GetOutgoingEdges(cur_idx)) {
             if (next.GetDestination() == cur_idx) continue;
             const int new_idx = next.GetDestination();
             const TValue new_cost = cur_cost + next.GetWeight();

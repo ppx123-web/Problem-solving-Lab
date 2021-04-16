@@ -39,7 +39,7 @@ public:
 
     virtual std::optional<TValue> TryGetDistanceTo(int destination) const {
         if(vis.find(destination) != vis.end()) {
-            return optional<TValue>(cost.find(destination)->second);
+            return cost.find(destination)->second;
         } else return nullopt;
     }
 
