@@ -41,7 +41,7 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(TGraph<TValue> *gra
         const int cur_idx = temp.first;
         const TValue cur_cost = temp.second;
         pq.pop();
-        if (ShortestPaths<TGraph,TValue>::vis[cur_idx]) continue;
+        if (ShortestPaths<TGraph,TValue>::vis.find(cur_idx) != ShortestPaths<TGraph,TValue>::vis.end()) continue;
         ShortestPaths<TGraph,TValue>::vis[cur_idx] = 1;
         for (auto next:graph->GetOutgoingEdges(cur_idx)) {
             if (next.GetDestination() == cur_idx) continue;
