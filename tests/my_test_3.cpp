@@ -12,7 +12,7 @@ int main() {
 
     ShortestPaths<WeightedGraph, int>
             *p = new DijkstraShortestPaths<WeightedGraph, int>(g, 1);
-    cout << p->TryGetDistanceTo(3).value_or(100) << endl;
+    cout << p->HasPathTo(3) << endl;
     delete p;
     return 0;
 }

@@ -14,12 +14,19 @@ protected:
     unordered_map<int, TValue> vis;
     unordered_map<int, TValue> cost;
     unordered_map<int, TValue> parent;
-    int source;
+    int src;
 public:
     ShortestPaths() {
+        vis.clear();
+        cost.clear();
+        parent.clear();
     }
 
     ShortestPaths(const TGraph<TValue> *graph, int source) {
+        vis.clear();
+        cost.clear();
+        parent.clear();
+        src = source;
     }
 
     virtual ~ShortestPaths() {
@@ -40,7 +47,7 @@ public:
         vector<int> ans;
         int cur = destination;
         if(vis.find(destination) != vis.end()) {
-            while (cur != source) {
+            while (cur != src) {
                 ans.insert(ans.begin(),cur);
                 cur = parent.find(cur)->first;
             }

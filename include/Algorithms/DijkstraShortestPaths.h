@@ -28,11 +28,7 @@ public:
 
 
 template<template<typename> class TGraph, typename TValue>
-DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(TGraph<TValue> *graph, int src) {
-    ShortestPaths<TGraph,TValue>::vis.clear();
-    ShortestPaths<TGraph,TValue>::cost.clear();
-    ShortestPaths<TGraph,TValue>::parent.clear();
-    ShortestPaths<TGraph,TValue>::source = src;
+DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(TGraph<TValue> *graph, int src):ShortestPaths<TGraph,TValue>(){
     priority_queue<pair<int, TValue>, vector<pair<int, TValue>>, cmp> pq;
     ShortestPaths<TGraph,TValue>::cost[src] = TValue();
     pq.emplace(src, ShortestPaths<TGraph,TValue>::cost[src]);
