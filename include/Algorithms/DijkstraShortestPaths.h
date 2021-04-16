@@ -6,6 +6,11 @@
 
 template<template<typename> class TGraph, typename TValue>
 class DijkstraShortestPaths : public ShortestPaths<TGraph, TValue> {
+private:
+    unordered_map<int, TValue> vis;
+    unordered_map<int, TValue> cost;
+    unordered_map<int, TValue> parent;
+    int source;
 public:
     DijkstraShortestPaths(TGraph<TValue> *graph, int src);
 

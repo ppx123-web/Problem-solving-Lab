@@ -10,22 +10,12 @@ using namespace std;
 
 template<template<typename> class TGraph, typename TValue>
 class ShortestPaths {
-public:
-    unordered_map<int, TValue> vis;
-    unordered_map<int, TValue> cost;
-    unordered_map<int, TValue> parent;
-    int source;
+
 public:
     ShortestPaths() {
-        vis.clear();
-        cost.clear();
-        parent.clear();
     }
 
     ShortestPaths(const TGraph<TValue> *graph, int source) {
-        vis.clear();
-        cost.clear();
-        parent.clear();
     }
 
     virtual ~ShortestPaths();
