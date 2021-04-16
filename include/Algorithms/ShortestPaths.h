@@ -3,9 +3,14 @@
 
 #include <vector>
 #include <optional>
+#include <bits/stdc++.h>
+#include <Algorithms/BreadthFirstSearcher.h>
+using namespace std;
+
 
 template<template<typename> class TGraph, typename TValue>
 class ShortestPaths {
+
 public:
     ShortestPaths() = delete;
 
@@ -14,17 +19,14 @@ public:
     virtual ~ShortestPaths();
 
 public:
-    bool HasPathTo(int destination) const;
+    virtual bool HasPathTo(int destination) const;
 
-    std::optional<TValue> TryGetDistanceTo(int destination) const;
+    virtual std::optional<TValue> TryGetDistanceTo(int destination) const;
 
-    std::optional<std::vector<int>> TryGetShortestPathTo(int destination) const;
+    virtual std::optional<std::vector<int>> TryGetShortestPathTo(int destination) const;
 };
 
-template<template<typename> class TGraph, typename TValue>
-ShortestPaths<TGraph, TValue>::ShortestPaths(const TGraph *graph, int source) {
-    
-}
+
 
 
 #endif
