@@ -41,7 +41,7 @@ public:
 
     virtual bool RemoveVertex(int vertex);
 
-    virtual bool AddEdge(int vertex1, int vertex2);
+    bool AddEdge(int vertex1, int vertex2);
 
     virtual bool RemoveEdge(int vertex1, int vertex2);
 

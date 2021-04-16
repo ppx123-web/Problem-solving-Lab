@@ -17,8 +17,9 @@ class DepthFirstSearcher {
 public:
     static void VisitAllVertices(const TGraph *graph, int start, const std::function<void(int)> &action);
     static void dfs_vis_all(const TGraph *graph, int start, const function<void(int)> &action,unordered_map<int,int>&vis_all);
-    static std::optional<int> FindFirstVertex(const TGraph *graph, int start, const std::function<bool(int)> &predicate);
+    static std::optional<int> TryFindFirstVertex(const TGraph *graph, int start, const std::function<bool(int)> &predicate);
     static std::optional<int> dfs_vis_opt(const TGraph *graph, int start, const std::function<bool(int)> &predicate,unordered_map<int,int>&vis_opt);
+
 };
 
 
@@ -42,7 +43,7 @@ void DepthFirstSearcher<TGraph>::dfs_vis_all(const TGraph *graph, int start, con
 
 template<typename TGraph>
 std::optional<int>
-DepthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *graph, int start, const function<bool(int)> &predicate) {
+DepthFirstSearcher<TGraph>::TryFindFirstVertex(const TGraph *graph, int start, const function<bool(int)> &predicate) {
     if(!graph->ContainsVertex(start)) return nullopt;
     unordered_map<int,int> vis;
     return dfs_vis_opt(graph,start,predicate,vis);
