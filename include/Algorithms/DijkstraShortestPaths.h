@@ -38,7 +38,7 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(TGraph<TValue> *gra
     parent.clear();
     source = src;
     priority_queue<pair<int, TValue>, vector<pair<int, TValue>>, cmp> pq;
-    cost[src] = optional<TValue>(0);
+    cost[src] = 0;
     pq.emplace(src, cost[src]);
     while (!pq.empty()) {
         const pair<int, TValue> temp = pq.top();
@@ -73,7 +73,7 @@ bool DijkstraShortestPaths<TGraph, TValue>::HasPathTo(int destination) const {
 template<template<typename> class TGraph, typename TValue>
 optional<TValue> DijkstraShortestPaths<TGraph, TValue>::TryGetDistanceTo(int destination) const {
     if(vis.find(destination) != vis.end()) {
-        return optional<TValue>(cost[destination]);
+        return optional<TValue>(cost.find(destination)->second);
     } else return nullopt;
 }
 
@@ -84,7 +84,7 @@ std::optional<std::vector<int>> DijkstraShortestPaths<TGraph, TValue>::TryGetSho
     if(vis.find(destination) != vis.end()) {
         while (cur != source) {
             ans.insert(ans.begin(),cur);
-            cur = parent[cur];
+            cur = parent.find(cur)->first;
         }
         ans.insert(ans.begin(),cur);
         return ans;
