@@ -59,7 +59,7 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(TGraph<TValue> *gra
 
 template<template<typename> class TGraph, typename TValue>
 bool DijkstraShortestPaths<TGraph, TValue>::HasPathTo(int destination) const {
-    return ShortestPaths<TGraph,TValue>::HasPathTo(destination)
+    return ShortestPaths<TGraph,TValue>::HasPathTo(destination);
 }
 
 template<template<typename> class TGraph, typename TValue>
