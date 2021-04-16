@@ -49,7 +49,7 @@ public:
         if(vis.find(destination) != vis.end()) {
             ans.push_back(cur);
             while (cur != src) {
-                cur = parent.find(cur)->first;
+                cur = parent.find(cur)->second;
                 ans.insert(ans.begin(),cur);
             }
             return ans;
