@@ -48,9 +48,9 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(TGraph<TValue> *gra
         if (vis[cur_idx]) continue;
         vis[cur_idx] = 1;
         for (auto next:graph->GetOutgoingEdges(cur_idx)) {
-            if (next.first == cur_idx) continue;
-            const int new_idx = next.first;
-            const int new_cost = cur_cost + next.second;
+            if (next.GetDestination() == cur_idx) continue;
+            const int new_idx = next.GetDestination();
+            const TValue new_cost = cur_cost + next.GetWeight();
             if (new_cost < cost[new_idx]) {
                 pq.emplace(new_idx, new_cost);
                 cost[new_idx] = new_cost;
