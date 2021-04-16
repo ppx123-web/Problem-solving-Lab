@@ -31,7 +31,7 @@ public:
     }
 
     virtual std::optional<std::vector<int>> TryGetShortestPathTo(int destination) const {
-        
+
     }
 };
 

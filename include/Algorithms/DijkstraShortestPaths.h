@@ -38,7 +38,7 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(TGraph<TValue> *gra
     parent.clear();
     source = src;
     priority_queue<pair<int, TValue>, vector<pair<int, TValue>>, cmp> pq;
-    cost[src] = 0;
+    cost[src] = TValue();
     pq.emplace(src, cost[src]);
     while (!pq.empty()) {
         const pair<int, TValue> temp = pq.top();
