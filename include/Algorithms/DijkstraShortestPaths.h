@@ -5,7 +5,7 @@
 
 
 template<template<typename> class TGraph, typename TValue>
-class DijkstraShortestPaths : public ShortestPaths<TGraph, TValue> {
+class DijkstraShortestPaths : public ShortestPaths<TGraph<TValue>, TValue> {
 private:
     unordered_map<int, TValue> vis;
     unordered_map<int, TValue> cost;
@@ -56,36 +56,6 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(TGraph<TValue> *gra
         }
     }
 }*/
-
-/*
-int dijkstra(int src, int *cost) {
-    memset(vis, 0, sizeof vis);
-    priority_queue<state, vector<state>, cmp> pq;
-    cost[src] = 0;
-    pq.emplace(src, cost[src]);
-    while (!pq.empty()) {
-        const auto temp = pq.top();
-        const int cur_idx = temp.first;
-        const int cur_cost = temp.second;
-        pq.pop();
-        if (vis[cur_idx]) continue;
-        vis[cur_idx] = 1;
-        for (auto next:edges[cur_idx]) {
-            if (next.first == cur_idx) continue;
-            const int new_idx = next.first;
-            const int new_cost = cur_cost + next.second;
-            if (new_cost < cost[new_idx]) {
-                pq.emplace(new_idx,new_cost);
-                cost[new_idx] = new_cost;
-            }
-        }
-    }
-    for (int i = 1; i <= n; i++)
-        if (!vis[i]) return false;
-    return true;
-}
- */
-
 
 
 #endif
