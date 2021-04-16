@@ -18,7 +18,8 @@ public:
     ShortestPaths(const TGraph<TValue> *graph, int source) {
     }
 
-    virtual ~ShortestPaths();
+    virtual ~ShortestPaths() {
+    }
 
 public:
     virtual bool HasPathTo(int destination) const;
