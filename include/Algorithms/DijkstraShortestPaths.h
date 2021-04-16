@@ -43,7 +43,7 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(TGraph<TValue> *gra
             if (next.GetDestination() == cur_idx) continue;
             const int new_idx = next.GetDestination();
             const TValue new_cost = cur_cost + next.GetWeight();
-            if (new_cost < ShortestPaths<TGraph,TValue>::cost[new_idx]) {
+            if (ShortestPaths<TGraph,TValue>::cost.find(new_idx) == ShortestPaths<TGraph,TValue>::cost.end()||new_cost < ShortestPaths<TGraph,TValue>::cost[new_idx]) {
                 pq.emplace(new_idx, new_cost);
                 ShortestPaths<TGraph,TValue>::cost[new_idx] = new_cost;
                 ShortestPaths<TGraph,TValue>::parent[new_idx] = cur_idx;
