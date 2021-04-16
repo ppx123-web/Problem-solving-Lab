@@ -47,11 +47,11 @@ public:
         vector<int> ans;
         int cur = destination;
         if(vis.find(destination) != vis.end()) {
+            ans.push_back(cur);
             while (cur != src) {
-                ans.insert(ans.begin(),cur);
                 cur = parent.find(cur)->first;
+                ans.insert(ans.begin(),cur);
             }
-            ans.insert(ans.begin(),cur);
             return ans;
         } else return nullopt;
     }
